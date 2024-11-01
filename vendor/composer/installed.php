@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'pedro-mendonca/translation-tools',
+        'pretty_version' => '1.7.2',
+        'version' => '1.7.2.0',
+        'reference' => '191710448e2775fd64ab1c8d75de7b232d302d31',
+        'type' => 'wordpress-plugin',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => false,
+    ),
+    'versions' => array(
+        'gettext/gettext' => array(
+            'pretty_version' => 'v4.8.12',
+            'version' => '4.8.12.0',
+            'reference' => '11af89ee6c087db3cf09ce2111a150bca5c46e12',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../gettext/gettext',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'gettext/languages' => array(
+            'pretty_version' => '2.10.0',
+            'version' => '2.10.0.0',
+            'reference' => '4d61d67fe83a2ad85959fe6133d6d9ba7dddd1ab',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../gettext/languages',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'pedro-mendonca/translation-tools' => array(
+            'pretty_version' => '1.7.2',
+            'version' => '1.7.2.0',
+            'reference' => '191710448e2775fd64ab1c8d75de7b232d302d31',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

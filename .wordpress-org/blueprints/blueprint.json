@@ -1,0 +1,65 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/wp-admin/options-general.php",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "6.5.4"
+  },
+  "phpExtensionBundles": [
+    "kitchen-sink"
+  ],
+  "features": {
+    "networking": true
+  },
+  "steps": [
+    {
+      "step": "login",
+      "username": "admin",
+      "password": "password"
+    },
+    {
+      "step": "installPlugin",
+      "pluginZipFile": {
+        "resource": "wordpress.org/plugins",
+        "slug": "translation-tools"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "mkdir",
+      "path": "/wordpress/wp-content/downloads/"
+    },
+    {
+      "step": "mkdir",
+      "path": "/wordpress/wp-content/languages"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/downloads/wordpress_en_GB_translations.zip",
+      "data": {
+        "resource": "url",
+        "caption": "Downloading zip file",
+        "url": "https://downloads.wordpress.org/translation/core/6.5.4/en_GB.zip"
+      }
+    },
+    {
+      "step": "unzip",
+      "zipPath": "/wordpress/wp-content/downloads/wordpress_en_GB_translations.zip",
+      "extractToPath": "/wordpress/wp-content/languages/"
+    },
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "WPLANG": "en_GB"
+      }
+    },
+    {
+      "step": "defineWpConfigConsts",
+      "consts": {
+        "WP_DEBUG": true
+      }
+    }
+  ]
+}
